@@ -1,3 +1,5 @@
+[!preview](https://i.imgur.com/WxJ1Kyv.png)
+
 # Attention Token
 
 Idea spawned from this thread
