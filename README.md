@@ -31,4 +31,4 @@ Inputs for calculating the token usage:
 1. Download the code
 2. Go to chrome://extensions/ and enable developer mode
 3. Load the code as an unpacked extension
-4. Open any page and click on the extension icon
+4. Open any page and click on the extension icon (Attention Tokens)
