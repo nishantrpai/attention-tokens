@@ -1,21 +1,33 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Attention Tokens
+# Attention Token
 
-My Chrome Extension
+Idea spawned from this thread
 
-## Features
+[thread on tokens left by @punk6529](https://twitter.com/punk6529/status/1803522711236256254)
 
-- Feature 1
-- Feature 2
+## What is this?
 
-## Install
+Everything we see/touch/feel/think/react uses our attention.
 
-[**Chrome** extension]() <!-- TODO: Add chrome extension link inside parenthesis -->
+Not only online, but offline too.
 
-## Contribution
+Everything is competing for our attention.
 
-Suggestions and pull requests are welcomed!.
+1 token = 4 characters
 
----
+So far I've used your 81 tokens. If you read the thread, maybe more.
 
-This project was bootstrapped with [Chrome Extension CLI](https://github.com/dutiyesh/chrome-extension-cli)
+## Goal
 
+Become aware of this token usage.
+
+## Inputs
+
+Inputs for calculating the token usage:
+- Number of words on screen
+- Number of words being written
+- Number of images on screen
+- Number of images being created
+- Number of videos on screen
+- Number of videos being created
+- Number of audios on screen
+- Number of audios being created
