@@ -82,31 +82,27 @@ import './popup.css';
   }
 
   function restoreCounter() {
-    // Restore count value
-    counterStorage.get((count) => {
-      if (typeof count === 'undefined') {
-        // Set counter value as 0
-        counterStorage.set(0, () => {
-          setupCounter(0);
-        });
-      } else {
-        setupCounter(count);
-      }
-    });
-  }
+    setInterval(() => {
+      let attentionUsage;
+
+      chrome.storage.sync.get('attentionUsage', function (data) {
+        attentionUsage = data.attentionUsage || {
+          total: 0,
+          weekly: {
+            0: 0,
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            6: 0
+          }
+        }})
+
+      }, 1000)
+    }
 
   document.addEventListener('DOMContentLoaded', restoreCounter);
 
-  // Communicate with background file by sending a message
-  chrome.runtime.sendMessage(
-    {
-      type: 'GREETINGS',
-      payload: {
-        message: 'Hello, my name is Pop. I am from Popup.',
-      },
-    },
-    (response) => {
-      console.log(response.message);
-    }
-  );
-})();
+    // Communicate with background file by sending a message
+  }) ();
