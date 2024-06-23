@@ -1,4 +1,4 @@
-[!preview](https://i.imgur.com/WxJ1Kyv.png)
+![preview](https://i.imgur.com/WxJ1Kyv.png)
 
 # Attention Token
 
