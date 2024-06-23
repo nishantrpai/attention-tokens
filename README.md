@@ -24,10 +24,11 @@ Become aware of this token usage.
 
 Inputs for calculating the token usage:
 - Number of words on screen
-- Number of words being written
 - Number of images on screen
-- Number of images being created
-- Number of videos on screen
-- Number of videos being created
-- Number of audios on screen
-- Number of audios being created
+
+## How to use
+
+1. Download the code
+2. Go to chrome://extensions/ and enable developer mode
+3. Load the code as an unpacked extension
+4. Open any page and click on the extension icon
