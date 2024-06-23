@@ -1,6 +1,7 @@
 'use strict';
 
 import './popup.css';
+import './chart.js';
 
 (function () {
   // We will make use of Storage API to get and store `count` value
@@ -111,6 +112,31 @@ import './popup.css';
 
         document.getElementById('counter').innerHTML = formatLargeNumber(attentionUsage.total);
 
+        const ctx = document.getElementById('myChart');
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: [0, 1, 2, 3, 4, 5, 6],
+            datasets: [{
+              label: 'Attention Usage',
+              data: Object.values(attentionUsage.weekly),
+              borderWidth: 0,
+              borderColor: '#333',
+              backgroundColor: '#333',
+              borderRadius: 5
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+              y: {
+                min: 1000,
+                display: false
+              }
+            }
+          }
+        });
       })
 
     }, 1000)

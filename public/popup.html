@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <title>Attention Tokens</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
   <link rel="stylesheet" href="popup.css" />
-
+  <script src="chart.js"></script>
 </head>
 
 <body>
@@ -15,7 +16,10 @@
     <div id="counter" class="counter"></div>
 
     <hr class="divider" />
-
+    <div style="width:300px;height:300px;">
+      <canvas id="myChart" width="300" height="300"
+        style="background-color: #0e0e0e; border-radius: 10px;width: 300px;height: 300px;padding: 10px;"></canvas>
+    </div>
   </div>
 
   <script src="popup.js"></script>

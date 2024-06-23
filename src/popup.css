@@ -15,8 +15,14 @@ html {
 }
 
 body {
-  width: 350px;
-  height: 300px;
+  width: 400px;
+  height: 450px;
+  background-color: #000;
+  color: #333;
+}
+
+canvas {
+  width: 100% !important;
 }
 
 .app {
