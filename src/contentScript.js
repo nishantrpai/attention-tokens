@@ -4,7 +4,7 @@
 // get weekly attenion token data
 let attentionUsage;
 
-chrome.storage.sync.get('attentionUsage', function(data) {
+chrome.storage.sync.get('attentionUsage', function (data) {
   attentionUsage = data.attentionUsage || {
     total: 0,
     weekly: {
@@ -76,13 +76,14 @@ function updateVisibleText(mutationList, observer) {
     currentTokensUsed += 3 * (img.width * img.height)
     console.log('token from image', 3 * (img.width * img.height))
   })
-  currentTokensUsed += visibleText.length/4;
-  attentionUsage.total += currentTokensUsed;
+  currentTokensUsed += visibleText.length / 4;
+  if (Object.keys(attentionUsage).length === 0) return;
+  attentionUsage.total += currentTokensUsed || 0;
   attentionUsage[new Date().getDay()] += currentTokensUsed
-  chrome.storage.sync.set({ attentionUsage: attentionUsage }, function() {
-    console.log('Attention usage saved:');
+  chrome.storage.sync.set({ attentionUsage: attentionUsage }, function () {
+    console.log('Attention usage saved');
   });
-  
+
   console.log(`Total tokens used: ${attentionUsage.total}`);
   console.log(`Current tokens used: ${currentTokensUsed}`);
 }

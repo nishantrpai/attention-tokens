@@ -81,11 +81,21 @@ import './popup.css';
     });
   }
 
+  function formatLargeNumber(number) {
+    let formattedNumber = number;
+    if (number >= 1000000) {
+      formattedNumber = (number / 1000000).toFixed(1) + 'M';
+    } else if (number >= 1000) {
+      formattedNumber = (number / 1000).toFixed(1) + 'K';
+    }
+    return formattedNumber;
+  }
+
   function restoreCounter() {
     setInterval(() => {
       let attentionUsage;
 
-      chrome.storage.sync.get('attentionUsage', function (data) {
+      chrome.storage.sync.get(['attentionUsage'], function (data) {
         attentionUsage = data.attentionUsage || {
           total: 0,
           weekly: {
@@ -97,12 +107,16 @@ import './popup.css';
             5: 0,
             6: 0
           }
-        }})
+        }
 
-      }, 1000)
-    }
+        document.getElementById('counter').innerHTML = formatLargeNumber(attentionUsage.total);
+
+      })
+
+    }, 1000)
+  }
 
   document.addEventListener('DOMContentLoaded', restoreCounter);
 
-    // Communicate with background file by sending a message
-  }) ();
+  // Communicate with background file by sending a message
+})();
