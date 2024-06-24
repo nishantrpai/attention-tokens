@@ -79,7 +79,7 @@ function updateVisibleText(mutationList, observer) {
     })
     currentTokensUsed += visibleText.length / 4;
       attentionUsage.total += currentTokensUsed || 0;
-      attentionUsage.weekly[new Date().getDay()] = attentionUsage.total;
+      attentionUsage.weekly[new Date().getDay()] += currentTokensUsed;
       chrome.storage.sync.set({ attentionUsage: attentionUsage }, function () {
         console.log('Attention usage saved');
       });
